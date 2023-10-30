@@ -1,0 +1,54 @@
+{
+	"name": "pipelineprocedure",
+	"properties": {
+		"activities": [
+			{
+				"name": "Sp_AlteraPedidos",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[AlteraPedidos]",
+					"storedProcedureParameters": {
+						"PRECO": {
+							"value": {
+								"value": "@pipeline().parameters.Preco",
+								"type": "Expression"
+							},
+							"type": "Decimal"
+						},
+						"PRODUTO": {
+							"value": {
+								"value": "@pipeline().parameters.Produto",
+								"type": "Expression"
+							},
+							"type": "String"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"parameters": {
+			"Produto": {
+				"type": "string"
+			},
+			"Preco": {
+				"type": "float"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2023-10-20T10:42:39Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
