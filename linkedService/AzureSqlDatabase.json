@@ -1,0 +1,20 @@
+{
+	"name": "AzureSqlDatabase",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=sqldb-estudos-academicos.database.windows.net;Initial Catalog=sqldb-estudos-academicos;User ID=felipe",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVault1",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "conectionsql",
+				"secretVersion": "78fec6fa4e38403d8fc5d6b892bf009d"
+			}
+		}
+	}
+}

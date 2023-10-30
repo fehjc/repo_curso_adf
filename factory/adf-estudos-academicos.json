@@ -1,0 +1,9 @@
+{
+	"name": "adf-estudos-academicos",
+	"location": "eastus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "0fe994c5-7919-42d8-b978-c09786d6d423",
+		"tenantId": "8d2b0286-1b91-43bc-8b9a-1a8b152d8487"
+	}
+}
